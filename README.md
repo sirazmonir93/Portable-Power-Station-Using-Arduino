@@ -8,6 +8,8 @@ Our project, the 'Portable Power Station,' takes cognizance of the pressing powe
 
 The 'Portable Power Station' offers the promise of consistent and dependable electricity, whether it's for essential medical equipment in remote clinics, sustaining daily livelihoods in rural areas, or ensuring uninterrupted education in urban centers. By harnessing the power of efficient conversion, we aim to play a pivotal role in mitigating the power crisis that has plagued Bangladesh, ultimately contributing to the nation's development and the well-being of its people.
 
+[![Watch Video](https://img.youtube.com/vi/k9VgIjJgFoU/0.jpg)](https://www.youtube.com/watch?v=k9VgIjJgFoU)
+
 # Feature:
 
 The aim of our project was to provide power in rural areas where electricity was not readily available.
