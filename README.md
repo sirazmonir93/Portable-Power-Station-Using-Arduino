@@ -8,7 +8,7 @@ Our project, the 'Portable Power Station,' takes cognizance of the pressing powe
 
 The 'Portable Power Station' offers the promise of consistent and dependable electricity, whether it's for essential medical equipment in remote clinics, sustaining daily livelihoods in rural areas, or ensuring uninterrupted education in urban centers. By harnessing the power of efficient conversion, we aim to play a pivotal role in mitigating the power crisis that has plagued Bangladesh, ultimately contributing to the nation's development and the well-being of its people.
 
-[![Watch Video](https://img.youtube.com/vi/k9VgIjJgFoU/0.jpg)](https://www.youtube.com/watch?v=k9VgIjJgFoU)
+
 
 # Feature:
 
@@ -91,6 +91,12 @@ Parts and cost estimations:
 
 <table><tr><td>Components</td><td>Quantity</td><td>Cost (BDT)</td></tr><tr><td>12V battery</td><td>1</td><td>1500</td></tr><tr><td>Wires</td><td></td><td>200</td></tr><tr><td>Inductor</td><td>2</td><td>50</td></tr><tr><td>Resistors</td><td></td><td>20</td></tr><tr><td>Arduino nano</td><td>1</td><td>600</td></tr><tr><td>N channel Mosfet</td><td>5</td><td>250</td></tr><tr><td>Diode</td><td>8</td><td>40</td></tr><tr><td>12V to 240V step-up transformer</td><td></td><td>1000</td></tr><tr><td>n-p-n transistor</td><td>5</td><td>250</td></tr><tr><td>Breadboard</td><td>1</td><td>100</td></tr><tr><td>Soldering iron and other soldering equipment</td><td></td><td>500</td></tr><tr><td>5W 220V light bulb</td><td></td><td>150</td></tr><tr><td>Small 5V light bulb</td><td>2</td><td>40</td></tr><tr><td>Total</td><td></td><td></td></tr></table>
 
-# Discussion:
+# Conclusion:
 
 By doing this project, we were able to learn about the working principles of inverters and buck converters. We gathered practical knowledge about these circuits. However, working with 230V AC was dangerous, so proper precautions were necessary. Also, proper simulations in appropriate software were done to ensure the feasibility of the project. Arduino was used in this project to easily change the generated PWM signals for our desired outputs, which were powered by an external DC source. However, in real life, self-sustaining circuits might be used in place of Arduino, which doesn't require an external power source.
+
+
+# Video Link:
+<div style="text-align: center;">
+  [![Watch Video](https://img.youtube.com/vi/k9VgIjJgFoU/0.jpg)](https://www.youtube.com/watch?v=k9VgIjJgFoU)
+</div>
