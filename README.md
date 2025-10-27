@@ -98,5 +98,5 @@ By doing this project, we were able to learn about the working principles of inv
 
 # Video Link:
 <div style="text-align: center;">
-  [![Watch Video](https://img.youtube.com/vi/k9VgIjJgFoU/0.jpg)](https://www.youtube.com/watch?v=k9VgIjJgFoU)
+  [Watch Video on YouTube](https://www.youtube.com/watch?v=k9VgIjJgFoU)
 </div>
