@@ -23,7 +23,8 @@ Technical details: This project has two parts. The first part is an inverter tha
 
 Inverter: The AC current is alternating and always changing direction. So, by arranging two MOSFETs in such a way that one will turn on and supply current in one direction, and after a few moments it turns off and the other MOSFET turns on to supply DC current in the opposite direction - if we can do it 50 times a second, we get basically ac current. But it will be a square wave AC current.
 
-![](images/3ca78fbe9a1cdeaa9cd98f23987027dc48a4401d599b32a565f8abdeea6bd2cb.jpg)
+![portable power station-7](https://github.com/user-attachments/assets/416e4c62-42cb-4556-bd29-4c59f0c176c6)
+
 
 # Square Wave
 
@@ -37,8 +38,9 @@ In order to make it more usable, we can do the following ways:
 The MOSFETs will be controlled by a Mosfet Driver which in this case we will be using BJT as Mosfet Driver. The on/off pulses will be provided by an Arduino.
 
 If we implement this way, we get a modified square wave.
+![portable power station-8](https://github.com/user-attachments/assets/7a71d156-caa9-402b-a209-ce99bece9845)
 
-![](images/c9ad6e497a7e208111a55d4d47cf96327850b1f6e0bf6b2c23b96e4e314e9912.jpg)  
+
 Modified Square wave
 
 After that, the current can be fed to a step-up transformer with appropriate coil ratio and power ratings to get 230V AC.
@@ -51,75 +53,25 @@ Our design implements a buck converter that is different from the conventional b
 
 # Methodology Flowchart :
 
-![](images/d2e4b9042e0cfd97c19e9e7023a8636d3c70c23a5cf2ad2c796fe91020ea1f75.jpg)
+![portable power station-4](https://github.com/user-attachments/assets/7cf4fd67-fea8-46ae-ad40-557aacfcd294)
+
 
 # Circuit Diagram:
 
-![](images/6acdc3c4dc2a68932f951c1065f2aba633a7c0315bd5b4e1e93512645d51a83d.jpg)
+![portable power station-5](https://github.com/user-attachments/assets/71c9a367-994f-47a3-bf41-1e91cf5f5794)
+
 
 # Implementation:
 
-# Arduino Code:
 
-```txt
-unsigned long previousMillis  $= 0$    
-const long interval  $= 10$  //20 ms for a  $50~\mathrm{Hz}$  PWM signal   
-int pwmState  $= 0$  //0 or 1 to alternate between pins 2 and 4   
-#definePWM_PIN9   
-#defineANALOG_PIN_A0A0   
-#defineANALOG_PIN_A1A1   
-const int numReadings  $= 10$    
-int readingsA0[numReadings];   
-int readingsA1[numReadings];   
-int index  $= 0$    
-int totalA0  $= 0$    
-int totalA1  $= 0$    
-int a;   
-int  $\mathbf{x} = 10$
-```
+![portable power station-8](https://github.com/user-attachments/assets/730d9dfb-7d51-4823-9bd6-5e5fd643a6a3)
 
-```txt
-void setup() { pinMode(2, OUTPUT); pinMode(4, OUTPUT); pinMode(PWM_PIN, OUTPUT); Serial.begin(9600); TCCR1B = TCCR1B & 0b11111000 | 0x01; // set timer 1 divisor to 1 for PWM frequency of 31372.55 Hz }
-```
 
-```javascript
-void loop() { // Smooth out the reading from A0 totalA0 = totalA0 - readingsA0[index]; readingsA0[index] = analogRead(ANALOG_PIN_A0);
-```
+# Output Snaps of our project:
 
-```txt
-totalA0 = totalA0 + readingsA0[index];   
-// Smooth out the reading from A1   
-totalA1 = totalA1 - readingsA1[index];   
-readingsA1[index] = analogRead(ANALOG_PIN_A1);   
-totalA1 = totalA1 + readingsA1[index];   
-index = (index + 1) % numReadings;   
-int smoothedA0 = totalA0 / numReadings;   
-int smoothedA1 = totalA1 / numReadings;   
-a= smoothedA1-smoothedA0;   
-if (a>200) { x=x-1; } if (a<200) { x=x+1; } }   
-analogWrite(PWM_PIN, x); // Example PWM output, not affected by smoothing
-```
+![portable power station-9](https://github.com/user-attachments/assets/63e3db19-4380-441c-96df-b7432c4417a3)
+![portable power station-10](https://github.com/user-attachments/assets/f3329230-55d9-4725-ae2f-6990d25e8545)
 
-```cpp
-unsigned long currentMillis  $=$  millis();   
-if(currentMillis - previousMillis  $\geq =$  interval）{ previousMillis  $=$  currentMillis; // Toggle between pins 2 and 4 pwmState  $= 1$  - pwmState; // Set the duty cycle based on the current PWM state if(pwmState  $\equiv = 0$  ）{ digitalWrite(2，HIGH); //  $50\%$  duty cycle on pin 2 digitalWrite(4，LOW); //  $0 \%$  duty cycle on pin 4 } else{ digitalWrite(2，LOW); //  $0 \%$  duty cycle on pin 2
-```
-
-```txt
-digitalWrite(4, HIGH); //  $50\%$  duty cycle on pin 4 } } }
-```
-
-# Output Caps of our project:
-
-![](images/f753fb11237d7bc6063a6609d767bf97cde701462afd039eafdd9165c644c217.jpg)
-
-![](images/4b262dd0d6c7fde4335a0af32159bcb61c9fa8394c54f10aa4408344059bc203.jpg)
-
-![](images/46539f5f06a733c3c95447d499441e335eb236929fd991cd0f61c73653e8682f.jpg)
-
-![](images/23c56c3b4d81d99fbb72c2f15230d581238843354f770442c65d1f92df2776c3.jpg)
-
-![](images/38646eec386de5fb2c24dea785c25d8ee1e5e152b9c663f55b60af1a7d44d81f.jpg)
 
 # Output Analysis:
 
